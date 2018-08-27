@@ -37,6 +37,11 @@ case $1 in
     then rm -r __pycache__
     fi
     rm ./app/*.pyc
+    rm ./.htaccess
+    rm ./index.fcgi
+    ;;
+"gitclone")
+    git clone https://github.com/shaihuludata/carbon
     ;;
 esac
 
