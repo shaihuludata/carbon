@@ -17,12 +17,15 @@ case $1 in
     fi
     if [ ! -e $DIR_ENV ]
     then
-        cd ./$ENV
-        python -m virtualenv .$DIR_ENV
+        cd ./$VENV
+        python2 -m virtualenv .$DIR_ENV
         cd ..
         $DIR_ENV/bin/pip2 install -r ./requirements.txt
-        mkdir $DIR_TMP
     else echo Files exist. Need to be cleared first.
+    fi
+    if [ ! -e $DIR_TMP ]
+    then
+        mkdir $DIR_TMP
     fi ;;
 "clear"|"clean")
     if [ -e $DIR_ENV ]
@@ -35,6 +38,9 @@ case $1 in
     fi
     if [ -e __pycache__ ]
     then rm -r __pycache__
+    fi
+    if [ -e $VENV ]
+    then rm -r $VENV
     fi
     rm ./app/*.pyc
     rm ./.htaccess
