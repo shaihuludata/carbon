@@ -46,6 +46,9 @@ case $1 in
 "gitfetch")
     git fetch origin master
     ;;
+"gitpull")
+    git pull origin master
+    ;;
 "gitpush")
     git add .
     git commit -m $2
