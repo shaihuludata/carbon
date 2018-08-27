@@ -51,5 +51,5 @@ case $1 in
     git commit -m $2
     git push -u origin master
 esac
-#CHECK
+#CHECK2
 
