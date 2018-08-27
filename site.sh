@@ -43,5 +43,12 @@ case $1 in
 "gitclone")
     git clone https://github.com/shaihuludata/carbon
     ;;
+"gitfetch")
+    git fetch origin master
+    ;;
+"gitpush")
+    git add .
+    git commit -m $2
+    git push -u origin master
 esac
 
